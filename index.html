@@ -159,12 +159,16 @@ strategic decisions by providing financial insights, increasing data retrieval e
        Linkedin:www.linkedin.com/in/suriya-subbiah-perumal
     </p>
     <form class="contact-form" action="https://formspree.io/f/mvgkljlq" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+        <label>Your email:
+          <input type="email" name="email" required>
+        </label>
+        <label>Your message:
+          <textarea name="message" required></textarea>
+        </label>
+        <input type="hidden" name="_subject" value="New message from portfolio site!">
+        <button type="submit">Send</button>
+      </form>
+    </section>
 
   <script>
     let activeSection = null;
