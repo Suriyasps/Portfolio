@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Suriya Subbiah Perumal | Data Analyst Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="Favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * {
@@ -19,7 +21,7 @@
     }
     header {
       text-align: center;
-      padding: 40px 40px;
+      padding: 40px 20px;
     }
     header h1 {
       font-size: 2.5rem;
@@ -30,6 +32,13 @@
       font-weight: 600;
       margin-top: 10px;
     }
+    .profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
     nav {
       margin-top: 20px;
       text-align: center;
@@ -41,16 +50,23 @@
       color: #000;
       cursor: pointer;
     }
+
     section {
-        background: rgba(255, 255, 255, 0.4);
-      margin: 30px auto;
-      max-width: 800px;
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      display: none;
-    }
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  margin: 30px auto;
+  width: 90%;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: none;
+}
     section.active {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
       display: block;
     }
     h2 {
@@ -79,30 +95,111 @@
       cursor: pointer;
       font-weight: 600;
     }
+    .social-icons {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+    .social-icons a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+    }
     .social-icons img {
-  width: 18px;
-  height: 18px;
-  margin-right: 6px;
-  vertical-align: middle;
+      width: 18px;
+      height: 18px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .carousel-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 10px;
+  max-width: 100%;
 }
-    .profile-image {
-  width: 120px;
-  height: 120px;
+.carousel-container::-webkit-scrollbar {
+  display: none !important;
+}
+.carousel-container::-webkit-scrollbar {
+  display: none !important;
+}
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+    .carousel {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  display: inline-flex;
+  gap: 20px;
+  scroll-behavior: smooth;
+  padding: 10px;
+  transition: transform 0.5s ease;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.carousel::-webkit-scrollbar {
+  display: none !important;
+}
+    .project-card {
+  flex: 0 0 280px;
+  scroll-snap-align: center;
+  background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: scale(0.9);
+  opacity: 0.6;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  cursor: pointer;
+}
+    .project-card.active {
+      transform: scale(1.05) translateZ(30px);
+      opacity: 1;
+      z-index: 2;
+    }
+  .carousel-dots {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.carousel-dots button {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
+  border: none;
+  background-color: #A9A9A9;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
-  </style>
+.carousel-dots button.active {
+  background-color: #004D46;
+  opacity: 1;
+  transform: scale(1.3);
+}
+</style>
 </head>
 <body>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <header>
     <img src="Image.jpeg" alt="Suriya Subbiah Perumal" class="profile-image">
     <h1>Suriya Subbiah Perumal</h1>
     <p>Data Analyst with a Focus on Artifical Intelligence</p>
     <nav>
-      <a onclick="toggleSection('experience')">Experience</a>
-      <a onclick="toggleSection('projects')">Projects</a>
+
       <a onclick="toggleSection('education')">Education</a>
       <a onclick="toggleSection('certifications')">Certifications</a>
       <a onclick="toggleSection('contact')">Contact</a>
@@ -112,18 +209,57 @@
   <section id="about" class="active" style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px); border-radius: 10px; padding: 20px;">
     <p><strong>Data Analyst and AI Enthusiast</strong> with expertise in machine learning, business intelligence, predictive and prescriptive analytics. Proven experience in machine learning, text analytics, big data processing, optimising supply chain operations, and enhancing decision making through data visualisation. Skilled in SQL, Python, AWS, Tableau, and Power BI, with a strong foundation in retail analytics, text analytics and process automation. Adept at collaborating with cross functional teams to drive efficiency and profitability.</p>
   </section>
+  
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-        <li>Developing Machine Learning Models for Credit Risks Analysis</li>
-        <li>Sentiment Analysis & Text Analytics for Brand Insights </li>
-        <li>Data Management and Insurance Analytics</li>
-        <li>Market Analysis Simulation</li>
-        <li>Advanced Statistical Analysis for Business Insights</li>
-        <li>Real-Time Analytics for E-Commerce Optimization</li>
-      </ul>
-    </section>
+  
+  <section id="projects" class="active" style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px); border-radius: 10px; padding: 20px;">
+    <h2><i class="fas fa-laptop-code"></i> Projects</h2>
+    <div class="carousel-container">
+      <div class="carousel" id="carousel">
+        <div class="project-card active" onclick="activateCard(this)">
+          <h3>Credit Risk Analysis</h3>
+          <p>Built ML models using XGBoost and SHAP to predict and explain loan defaults.</p>
+        </div>
+        <div class="project-card" onclick="activateCard(this)">
+          <h3>Sentiment Analysis & Text Analytics</h3>
+          <p>Conducted text analytics on product reviews to identify sentiment and emotion using Stochastic Gradient Descent and semi-supervised SelfTraining classifiers. Delivered insights to support emotion-led branding decisions.</p>
+        </div>
+        <div class="project-card" onclick="activateCard(this)">
+          <h3>Insurance Data Management</h3>
+          <p>Cleaned and processed insurance data using SQL and R, improving data quality and reporting efficiency.</p>
+        </div>
+        <div class="project-card" onclick="activateCard(this)">
+          <h3> House Price Prediction using Regression</h3>
+          <p>Built a predictive model using the Ames housing dataset to forecast property prices. Prioritised features such as build quality, living area, year of construction, and renovation history, validating results through statistical accuracy metrics.</p>
+        </div>
+        <div class="project-card" onclick="activateCard(this)">
+          <h3>Insurance Policy Integration and Sales Insights</h3>
+          <p>Unified motor, health, and travel insurance policy data using SQL and R. Cleaned and analysed over 4,000 records to identify sales trends and inform targeted marketing strategies.</p>
+        </div>
+        <div class="project-card" onclick="activateCard(this)">
+            <h3>Advanced Analytics for Business Strategy</h3>
+            <p>Developed statistical models such as Lasso Regression and Generalised Additive Models to explore key drivers of business performance. Utilised PCA and KNN for imputation, and applied Support Vector Machines for predictive insights, complemented by thorough data cleansing and visualisation.</p>
+          </div>
+        <div class="project-card" onclick="activateCard(this)">
+            <h3>Optimisation for Automotive and Healthcare Supply Chains</h3>
+            <p>Formulated mathematical models in R to optimise production across multiple plants for automotive and AI chip manufacturing sectors. Employed constraint-based logic and capacity planning to improve product allocation efficiency.</p>
+          </div>
+        <div class="project-card" onclick="activateCard(this)">
+            <h3> Predictive Modelling for Life Insurance Sales</h3>
+            <p>Applied Random Forest, Support Vector Machines, and Artificial Neural Networks to predict life insurance sales. Followed CRISP-DM methodology to optimise customer targeting using demographic and behavioural data.</p>
+          </div>
+          <div class="project-card" onclick="activateCard(this)">
+            <h3> Customer Segmentation for E-Commerce</h3>
+            <p>Segmented over 10,000 e-commerce customers using RFM analysis and clustering techniques. Used discriminant analysis to define customer profiles and enhance targeted marketing strategies.</p>
+          </div>
+          <div class="project-card" onclick="activateCard(this)">
+            <h3> Market Segmentation using Conjoint Analysis</h3>
+            <p>Used Conjoint Analysis and Principal Component Analysis to measure consumer preferences for circular products. Derived part-worths, attribute importance, and willingness to pay, informing sustainable product development.</p>
+          </div>
+      </div>
+    </div>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </section>
   
     <section id="education">
       <h2>Education</h2>
@@ -131,14 +267,14 @@
           <strong>● MSc in Physics</strong>| Presidency College |Sep 2021-Jun 2023<br>
           <strong>● BSc in Physics</strong>| SRM Institue Of Science and Technology | Jun 2017 - Jun 2020</p>
     </section>
-   <<section id="certifications">
+   <section id="certifications">
       <h2>Certifications</h2>
       <p>● AWS Cloud Foundations<br>
         ● AWS Machine Learning Foundations<br>
         ● Getting Started with Microsoft Azure<br>
    </p>
     </section>
-   <section id = "experience" class="active" >
+   <section id = "experience" class="active" style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px); border-radius: 10px; padding: 20px;" >
     <h2>Experience</h2>
     <p>  <strong>Data Analyst | Furniq UK Ltd., United Kingdom</strong> <br>
         ● Developed machine learning models to predict sales trends across 19 European countries and the U.S., improving forecast
@@ -188,7 +324,8 @@
     </form>
 </section>
 
-  <script>
+
+<script>
     let activeSection = null;
     function toggleSection(id) {
       const section = document.getElementById(id);
@@ -203,6 +340,38 @@
         activeSection = section;
       }
     }
-  </script>
+
+    function activateCard(card) {
+  const allCards = document.querySelectorAll('.project-card');
+  const carousel = document.querySelector('.carousel');
+  allCards.forEach(c => c.classList.remove('active'));
+  card.classList.add('active');
+  const cardWidth = card.offsetWidth + 20;
+  const index = Array.from(allCards).indexOf(card);
+  const center = (carousel.offsetWidth / 2) - (cardWidth / 2);
+  const scroll = index * cardWidth - center;
+  carousel.scrollTo({ left: scroll, behavior: 'smooth' });
+  updateDots(index);
+}
+
+  function updateDots(activeIndex) {
+  const dots = document.querySelectorAll('#carouselDots button');
+  dots.forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === activeIndex);
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.querySelector('.carousel');
+  const cards = document.querySelectorAll('.project-card');
+  const dotContainer = document.getElementById('carouselDots');
+  cards.forEach((_, idx) => {
+    const dot = document.createElement('button');
+    if (idx === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => activateCard(cards[idx]));
+    dotContainer.appendChild(dot);
+  });
+});
+</script>
 </body>
 </html>
