@@ -19,7 +19,7 @@
     }
     header {
       text-align: center;
-      padding: 40px 20px;
+      padding: 40px 40px;
     }
     header h1 {
       font-size: 2.5rem;
@@ -42,7 +42,7 @@
       cursor: pointer;
     }
     section {
-      background: white;
+        background: rgba(255, 255, 255, 0.4);
       margin: 30px auto;
       max-width: 800px;
       border-radius: 10px;
@@ -97,11 +97,10 @@
 </head>
 <body>
   <header>
-    <img src="Image.jpeg" alt="Suriya Bharathi" class="profile-image">
+    <img src="Image.jpeg" alt="Suriya Subbiah Perumal" class="profile-image">
     <h1>Suriya Subbiah Perumal</h1>
     <p>Data Analyst with a Focus on Artifical Intelligence</p>
     <nav>
-      <a onclick="toggleSection('about')">About Me</a>
       <a onclick="toggleSection('experience')">Experience</a>
       <a onclick="toggleSection('projects')">Projects</a>
       <a onclick="toggleSection('education')">Education</a>
@@ -110,9 +109,8 @@
     </nav>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Data Analyst with expertise in machine learning, business intelligence, predictive and prescriptive analytics. Proven experience in machine learning, text analytics, big data processing, optimising supply chain operations, and enhancing decision making through data visualisation. Skilled in SQL, Python, AWS, Tableau, and Power BI, with a strong foundation in retail analytics, text analytics and process automation. Adept at collaborating with cross functional teams to drive efficiency and profitability.</p>
+  <section id="about" class="active" style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px); border-radius: 10px; padding: 20px;">
+    <p><strong>Data Analyst and AI Enthusiast</strong> with expertise in machine learning, business intelligence, predictive and prescriptive analytics. Proven experience in machine learning, text analytics, big data processing, optimising supply chain operations, and enhancing decision making through data visualisation. Skilled in SQL, Python, AWS, Tableau, and Power BI, with a strong foundation in retail analytics, text analytics and process automation. Adept at collaborating with cross functional teams to drive efficiency and profitability.</p>
   </section>
 
   <section id="projects">
@@ -140,7 +138,7 @@
         ● Getting Started with Microsoft Azure<br>
    </p>
     </section>
-   <section id = "experience">
+   <section id = "experience" class="active" >
     <h2>Experience</h2>
     <p>  <strong>Data Analyst | Furniq UK Ltd., United Kingdom</strong> <br>
         ● Developed machine learning models to predict sales trends across 19 European countries and the U.S., improving forecast
@@ -170,14 +168,14 @@
 
    <section id="contact">
     <h2>Contact</h2>
-    <div class="social-icons">
-      <a href="mailto:ssubbiahperumal@gmail.com" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail">ssubbiahperumal@gmail.com
-      </a> <br>
-     <a href="https://www.linkedin.com/in/suriya-subbiah-perumal/" target="_blank" rel="noopener noreferrer">
-  <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">Suriya Subbiah Perumal 
-</a>
-    </div>
+    <div class="social-icons" style="flex-direction: row; justify-content: start; align-items: center; gap: 80px;">
+        <a href="mailto:ssubbiahperumal@gmail.com;" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail">ssubbiahperumal@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/suriya-subbiah-perumal/" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">Suriya Subbiah Perumal
+        </a>
+      </div>
     <form class="contact-form" action="https://formspree.io/f/mvgkljlq" method="POST">
       <label>Your email:
         <input type="email" name="email" required>
@@ -208,4 +206,3 @@
   </script>
 </body>
 </html>
-
