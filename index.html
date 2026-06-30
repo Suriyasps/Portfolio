@@ -3,399 +3,720 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Suriya Subbiah Perumal | Digital Transformation Engineer | AI & Digital Innovation Professional</title>
+  <title>Suriya Subbiah Perumal | AI & Digital Transformation</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="icon" href="Favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg: #f5f8fc;
+      --card: rgba(255, 255, 255, 0.82);
+      --text: #162033;
+      --muted: #5f6f89;
+      --accent: #2563eb;
+      --accent-dark: #1e40af;
+      --border: rgba(37, 99, 235, 0.14);
+      --shadow: 0 18px 50px rgba(15, 23, 42, 0.10);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background: linear-gradient(135deg, #FFB703, #8ECAE6);
-      color: #333;
-      padding: 20px;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 35%),
+        radial-gradient(circle at top right, rgba(14, 165, 233, 0.18), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(rgba(37,99,235,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.035) 1px, transparent 1px);
+      background-size: 36px 36px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
     header {
-      text-align: center;
-      padding: 40px 20px;
+      padding: 28px 0 70px;
     }
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-    }
-    header p {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-top: 10px;
-    }
-    .profile-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
+
     nav {
-      margin-top: 20px;
-      text-align: center;
+      position: sticky;
+      top: 16px;
+      z-index: 10;
+      width: min(960px, 92%);
+      margin: 0 auto 58px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 12px;
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     }
+
     nav a {
-      margin: 0 15px;
       text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 9px 14px;
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+      background: var(--accent);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 28px;
+      align-items: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .profile-image {
+      width: 126px;
+      height: 126px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #fff;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.16);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.12;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 1.08rem;
       font-weight: 600;
-      color: #000;
-      cursor: pointer;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: rgba(37, 99, 235, 0.10);
+      color: var(--accent-dark);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
     }
 
     section {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  transition: transform 0.3s ease;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(8px);
-  margin: 30px auto;
-  width: 90%;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  display: none;
-}
-    section.active {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
-      display: block;
+      scroll-margin-top: 110px;
+      margin: 28px auto;
+      padding: 34px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
+
+    section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+    }
+
     h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: #333;
+      font-size: 1.75rem;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
+
+    h2 i {
+      color: var(--accent);
+      font-size: 1.4rem;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      color: #334155;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .experience-card, .simple-card {
+      padding: 24px;
+      border: 1px solid rgba(37, 99, 235, 0.12);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.72);
+      margin-bottom: 18px;
+    }
+
+    .experience-card:last-child, .simple-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .job-header h3 {
+      font-size: 1.18rem;
+      color: var(--text);
+    }
+
+    .job-header p {
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .date-pill {
+      white-space: nowrap;
+      background: rgba(37, 99, 235, 0.10);
+      color: var(--accent-dark);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.84rem;
+    }
+
     ul {
-      list-style-type: disc;
       padding-left: 20px;
+      color: #334155;
     }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .skills-grid, .education-grid, .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .skill, .cert, .education-item {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.10);
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .education-item span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .carousel-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      padding: 8px 2px 16px;
+      scrollbar-width: none;
+    }
+
+    .carousel-container::-webkit-scrollbar { display: none; }
+
+    .carousel {
+      display: inline-flex;
+      gap: 18px;
+      scroll-behavior: smooth;
+    }
+
+    .project-card {
+      flex: 0 0 300px;
+      min-height: 245px;
+      scroll-snap-align: center;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(37,99,235,0.12);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 12px 30px rgba(15,23,42,0.08);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      cursor: pointer;
+    }
+
+    .project-card.active {
+      transform: scale(1.04);
+      border-color: rgba(37,99,235,0.35);
+    }
+
+    .project-card h3 {
+      font-size: 1.05rem;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .project-card a {
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    .project-card p {
+      color: #475569;
+      font-size: 0.94rem;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .carousel-dots button {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: none;
+      background: #94a3b8;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: 0.25s ease;
+    }
+
+    .carousel-dots button.active {
+      background: var(--accent);
+      transform: scale(1.35);
+      opacity: 1;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.08);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid rgba(37, 99, 235, 0.12);
+    }
+
+    .contact-link i {
+      color: var(--accent);
+    }
+
     .contact-form input, .contact-form textarea {
       display: block;
       width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      margin-bottom: 14px;
+      padding: 13px 14px;
+      border: 1px solid rgba(15, 23, 42, 0.14);
+      border-radius: 14px;
+      font-size: 1rem;
+      background: rgba(255,255,255,0.82);
     }
+
+    .contact-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .contact-form label {
+      font-weight: 700;
+      color: #334155;
+    }
+
     .contact-form button {
-      padding: 10px 20px;
-      background: #219EBC;
+      padding: 12px 22px;
+      background: var(--accent);
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 999px;
       cursor: pointer;
-      font-weight: 600;
+      font-weight: 800;
+      font-size: 1rem;
+      transition: 0.25s ease;
     }
-    .social-icons {
-      margin-top: 10px;
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
-    }
-    .social-icons a {
-      text-decoration: none;
-      color: #000;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-    }
-    .social-icons img {
-      width: 18px;
-      height: 18px;
-      margin-right: 6px;
-      vertical-align: middle;
-    }
-    .carousel-container {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  display: flex;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  gap: 20px;
-  padding: 10px;
-  max-width: 100%;
-}
-.carousel-container::-webkit-scrollbar {
-  display: none !important;
-}
-.carousel-container::-webkit-scrollbar {
-  display: none !important;
-}
-.carousel-container::-webkit-scrollbar {
-  display: none;
-}
-.carousel-container::-webkit-scrollbar {
-  display: none;
-}
-    .carousel {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  display: inline-flex;
-  gap: 20px;
-  scroll-behavior: smooth;
-  padding: 10px;
-  transition: transform 0.5s ease;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.carousel::-webkit-scrollbar {
-  display: none !important;
-}
-    .project-card {
-        display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  flex: 0 0 280px;
-  scroll-snap-align: center;
-  background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transform: scale(0.9);
-  opacity: 0.6;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  cursor: pointer;
-}
-    .project-card.active {
-      transform: scale(1.05) translateZ(30px);
-      opacity: 1;
-      z-index: 2;
-    }
-  .carousel-dots {
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-.carousel-dots button {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: none;
-  background-color: #A9A9A9;
-  opacity: 0.6;
-  cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-.carousel-dots button.active {
-  background-color: #004D46;
-  opacity: 1;
-  transform: scale(1.3);
-}
-</style>
-</head>
-<body>
-  <link rel="icon" href="Favicon.ico" type="image/x-icon">
-  <header>
-    <img src="Image.jpg" alt="Suriya Subbiah Perumal" class="profile-image">
-    <h1>Suriya Subbiah Perumal</h1>
-    <p>Digital Transformation Engineer | AI & Digital Innovation Professional</p>
-    <nav>
 
-      <a onclick="toggleSection('education')">Education</a>
-      <a onclick="toggleSection('certifications')">Certifications</a>
-      <a onclick="toggleSection('contact')">Contact</a>
+    .contact-form button:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 30px 0 44px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 760px) {
+      header {
+        padding-top: 16px;
+      }
+
+      nav {
+        position: static;
+        border-radius: 24px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+        padding: 28px 22px;
+      }
+
+      .hero-tags {
+        justify-content: center;
+      }
+
+      section {
+        padding: 24px 20px;
+        border-radius: 24px;
+      }
+
+      .job-header {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .date-pill {
+        white-space: normal;
+      }
+
+      .project-card {
+        flex-basis: 270px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
     </nav>
+
+    <div class="container">
+      <div class="hero">
+        <img src="Image.jpg" alt="Suriya Subbiah Perumal" class="profile-image">
+        <div>
+          <h1>Suriya Subbiah Perumal</h1>
+          <p>Digital Transformation Engineer | AI & Digital Innovation Professional</p>
+          <div class="hero-tags">
+            <span class="tag">Artificial Intelligence</span>
+            <span class="tag">Digital Transformation</span>
+            <span class="tag">Advanced Analytics</span>
+            <span class="tag">Innovation</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <section id="about" class="active"  style="max-width: 1500px; margin: 30px auto; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px); border-radius: 750px; padding: 30px;justify-content: center;">
-    <div style="text-align: left; max-width: 1500px; margin: 0 auto;"></div>
-    <p><strong>Digital Transformation Engineer | AI & Data Analytics</strong> with experience delivering industry-led digital transformation through collaboration between academia and manufacturing. Currently leading an Innovate UK Knowledge Transfer Partnership (KTP) between Queen's University Belfast, AMIC and IPC Mouldings, where I develop AI-driven automation, advanced analytics and intelligent decision-support solutions that improve operational efficiency and support strategic business objectives.</p>
+  <main class="container">
+    <section id="about">
+      <h2><i class="fa-solid fa-user"></i> About</h2>
+      <div class="about-text">
+        <p><strong>Digital Transformation Engineer | AI & Data Analytics</strong> with experience delivering industry-led digital transformation through collaboration between academia and manufacturing. Currently leading an Innovate UK Knowledge Transfer Partnership (KTP) between Queen's University Belfast, AMIC and IPC Mouldings, where I develop AI-driven automation, advanced analytics and intelligent decision-support solutions that improve operational efficiency and support strategic business objectives.</p>
 
-    <p>My experience spans artificial intelligence, machine learning, business intelligence, ERP integration and intelligent automation, with a strong focus on translating emerging technologies into practical, commercially valuable solutions. I enjoy working with cross-functional teams to identify opportunities for innovation, solve complex business challenges and accelerate the adoption of digital technologies.</p>
+        <p>My experience spans artificial intelligence, machine learning, business intelligence, ERP integration and intelligent automation, with a strong focus on translating emerging technologies into practical, commercially valuable solutions. I enjoy working with cross-functional teams to identify opportunities for innovation, solve complex business challenges and accelerate the adoption of digital technologies.</p>
 
-    <p>Passionate about the future of AI and digital innovation, I am committed to helping organisations harness data, emerging technologies and collaborative research to improve productivity, strengthen competitiveness and create lasting business impact.</p>
-</div>  
-</section>
-  
-  <section id="projects" class="active" style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px); border-radius: 50px; padding: 20px;">
-    <h2><i class="fas fa-laptop-code"></i> Projects</h2>
-    <div class="carousel-container">
-      <div class="carousel" id="carousel">           
-        <div class="project-card active" onclick="activateCard(this)">
-          <h3><a href="https://github.com/Suriyasps/Credit-Risk-Analysis" target="_blank">Credit Risk Analysis</a><i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8em;"></i></h3>        
-          <p>Developed advanced machine learning models to predict loan default risk using a real-world financial dataset; optimised models via Bayesian Optimisation and cross-validation,achieving high accuracy, and enhanced explainability with SHAP, ALE, and CIME to support complianceand ethical AI.</p>
-        </div>
-        <div class="project-card" onclick="activateCard(this)">
-          <h3><a href="https://github.com/Suriyasps/Emotions-in-Review-Leveraging-Text-Analytics-for-Enhanced-Brand-Insight" target="_blank">Sentiment Analysis & Text Analytics</a><i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8em;"></i></h3>
-          <p>Conducted text analytics on product reviews to identify sentiment and emotion using Stochastic Gradient Descent and semi-supervised SelfTraining classifiers. Delivered insights to support emotion-led branding decisions.</p>
-        </div>
-        <div class="project-card" onclick="activateCard(this)">
-          <h3> <a href="https://github.com/Suriyasps/Emotions-in-Review-Leveraging-Text-Analytics-for-Enhanced-Brand-Insight" target="_blank">House Price Prediction using Regression</a><i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8em;"></i></h3>
-          <p>Built a predictive model using the Ames housing dataset to forecast property prices. Prioritised features such as build quality, living area, year of construction, and renovation history, validating results through statistical accuracy metrics.</p>
-        </div>
-        <div class="project-card" onclick="activateCard(this)">
-            <h3><a href="https://github.com/Suriyasps/Strategic-Insights-through-Advanced-Data-Analysis" target="_blank">Advanced Analytics for Business Strategy</a><i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8em;"></i></h3>
-            <p>Developed statistical models such as Lasso Regression and Generalised Additive Models to explore key drivers of business performance. Utilised PCA and KNN for imputation, and applied Support Vector Machines for predictive insights, complemented by thorough data cleansing and visualisation.</p>
+        <p>Passionate about the future of AI and digital innovation, I am committed to helping organisations harness data, emerging technologies and collaborative research to improve productivity, strengthen competitiveness and create lasting business impact.</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2><i class="fa-solid fa-layer-group"></i> Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">Artificial Intelligence</div>
+        <div class="skill">Machine Learning</div>
+        <div class="skill">Data Analytics</div>
+        <div class="skill">Python</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Power BI</div>
+        <div class="skill">Microsoft Azure</div>
+        <div class="skill">Amazon Web Services</div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
+
+      <div class="experience-card">
+        <div class="job-header">
+          <div>
+            <h3>Digital Transformation Engineer</h3>
+            <p>Queen's University Belfast (KTP) | Belfast, United Kingdom</p>
           </div>
-        <div class="project-card" onclick="activateCard(this)">
-            <h3><a href="https://github.com/Suriyasps/Data-Driven-Decision-Making" target="_blank">Optimisation for Automotive and Healthcare Supply Chains</a><i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8em;"></i></h3>
-            <p>Formulated mathematical models in R to optimise production across multiple plants for automotive and AI chip manufacturing sectors. Employed constraint-based logic and capacity planning to improve product allocation efficiency.</p>
+          <span class="date-pill">July 2025 – Present</span>
+        </div>
+        <ul>
+          <li>Lead the delivery of an Innovate UK Knowledge Transfer Partnership (KTP), developing and implementing a digital transformation roadmap that accelerates AI adoption, automation and data-driven decision-making within a UK aerospace manufacturer.</li>
+          <li>Design and deploy AI-enabled automation, predictive analytics and production planning solutions that have eliminated over <strong>35 hours of manual administrative work each week</strong>, improving customer response times and operational efficiency.</li>
+          <li>Identify, evaluate and prioritise emerging technologies including Artificial Intelligence (AI), advanced analytics and Industry 4.0, translating research into commercially deployable solutions aligned with business strategy.</li>
+          <li>Build strong partnerships across industry, academia and technology providers, collaborating with senior leadership, researchers and operational teams to deliver strategic innovation initiatives.</li>
+          <li>Represent the partnership at technical presentations, innovation events and industry engagements, promoting collaboration and best practice in digital manufacturing.</li>
+        </ul>
+      </div>
+
+      <div class="experience-card">
+        <div class="job-header">
+          <div>
+            <h3>Data Analyst</h3>
+            <p>Furniq UK Ltd. | Belfast, United Kingdom</p>
           </div>
-        <div class="project-card" onclick="activateCard(this)">
-            <h3><a href="https://github.com/Suriyasps/Navigating-the-Nexus-Predictive-Power-in-the-Insurance-Industry"> Navigating the Nexus Predictive Power in the Insurance Industry </a><i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8em;"></i></h3>
-            <p>Applied Random Forest, Support Vector Machines, and Artificial Neural Networks to predict life insurance sales. Followed CRISP-DM methodology to optimise customer targeting using demographic and behavioural data.</p>
+          <span class="date-pill">November 2024 – July 2025</span>
+        </div>
+        <ul>
+          <li>Led the development of AI-driven reporting and forecasting solutions that improved demand planning, inventory management and strategic decision-making across international business operations.</li>
+          <li>Designed and integrated enterprise data solutions by connecting CRM platforms, cloud data warehouses and operational systems, creating a single source of truth for business intelligence and reporting.</li>
+          <li>Collaborated with cross-functional stakeholders to identify digital transformation opportunities, translating business requirements into scalable analytics and automation solutions.</li>
+          <li>Delivered interactive dashboards and predictive analytics that enhanced operational visibility and contributed to improved supply chain performance and revenue growth.</li>
+          <li>Promoted the adoption of data-driven decision-making by delivering user training, technical guidance and analytics solutions across the organisation.</li>
+        </ul>
+      </div>
+
+      <div class="experience-card">
+        <div class="job-header">
+          <div>
+            <h3>Business Analyst – Student Mentor</h3>
+            <p>Survitec Group Ltd. | Belfast, United Kingdom</p>
+          </div>
+          <span class="date-pill">May 2024 – August 2024</span>
+        </div>
+        <ul>
+          <li>Supported enterprise digital transformation initiatives through data integration, analytics and process optimisation within a manufacturing environment.</li>
+          <li>Designed predictive models and optimisation algorithms to improve resource planning, production scheduling and budget forecasting.</li>
+          <li>Developed Power BI dashboards that enabled senior management to monitor key business performance indicators and support strategic decision-making.</li>
+          <li>Collaborated with multidisciplinary teams to identify opportunities for process improvement and deliver practical data-driven solutions.</li>
+          <li>Mentored interns and colleagues in analytics tools and best practices, strengthening team capability and encouraging data-driven decision-making.</li>
+        </ul>
+      </div>
+
+      <div class="experience-card">
+        <div class="job-header">
+          <div>
+            <h3>Research Assistant</h3>
+            <p>SRM Institute of Science and Technology | Chennai, India</p>
+          </div>
+          <span class="date-pill">January 2021 – June 2023</span>
+        </div>
+        <ul>
+          <li>Conducted multidisciplinary research combining computational modelling, statistical analysis and experimental techniques to investigate advanced thermoelectric materials.</li>
+          <li>Developed automated data acquisition and analysis workflows that improved research efficiency, data quality and experimental reproducibility.</li>
+          <li>Applied predictive modelling techniques to optimise experimental conditions and support evidence-based research decisions.</li>
+          <li>Collaborated with academic researchers across multiple disciplines, contributing to research publications and knowledge dissemination.</li>
+          <li>Presented technical findings to academic audiences while translating complex scientific concepts into practical research outcomes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2><i class="fas fa-laptop-code"></i> Projects</h2>
+      <div class="carousel-container">
+        <div class="carousel" id="carousel">
+          <div class="project-card active" onclick="activateCard(this)">
+            <h3><a href="https://github.com/Suriyasps/Credit-Risk-Analysis" target="_blank" rel="noopener noreferrer">Credit Risk Analysis <i class="fas fa-arrow-up-right-from-square"></i></a></h3>
+            <p>Developed machine learning models to predict loan default risk using a real-world financial dataset; optimised models via Bayesian Optimisation and cross-validation, and enhanced explainability with SHAP, ALE and CIME.</p>
           </div>
           <div class="project-card" onclick="activateCard(this)">
-            <h3><a href="https://github.com/Suriyasps/Decoding-Customer-Dynamics-Strategic-Segmentation-for-E-Commerce-Growth"> Customer Segmentation for E-Commerce</a><i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8em;"></i></h3>
-            <p>Segmented over 10,000 e-commerce customers using RFM analysis and clustering techniques. Used discriminant analysis to define customer profiles and enhance targeted marketing strategies.</p>
+            <h3><a href="https://github.com/Suriyasps/Emotions-in-Review-Leveraging-Text-Analytics-for-Enhanced-Brand-Insight" target="_blank" rel="noopener noreferrer">Sentiment Analysis & Text Analytics <i class="fas fa-arrow-up-right-from-square"></i></a></h3>
+            <p>Conducted text analytics on product reviews to identify sentiment and emotion using Stochastic Gradient Descent and semi-supervised Self-Training classifiers.</p>
           </div>
           <div class="project-card" onclick="activateCard(this)">
-            <h3> <a href=" https://github.com/Suriyasps/Market-Dynamics-through-a-Dual-Lens">Market Dynamics through a Dual Lens</a><i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8em;"></i></h3>
-            <p>Used Conjoint Analysis and Principal Component Analysis to measure consumer preferences for circular products. Derived part-worths, attribute importance, and willingness to pay, informing sustainable product development.</p>
+            <h3><a href="https://github.com/Suriyasps/Emotions-in-Review-Leveraging-Text-Analytics-for-Enhanced-Brand-Insight" target="_blank" rel="noopener noreferrer">House Price Prediction <i class="fas fa-arrow-up-right-from-square"></i></a></h3>
+            <p>Built a predictive model using the Ames housing dataset to forecast property prices, prioritising key property features and validating results through statistical accuracy metrics.</p>
           </div>
-        <div class="project-card" onclick="activateCard(this)">
-          <h3>Insurance Data Management</h3>
-          <p>Merged fragmented datasets from Access and Excel into a centralized base table, automated joins and quality checks, and generated insights for product-level strategy using SQL and R</p>
+          <div class="project-card" onclick="activateCard(this)">
+            <h3><a href="https://github.com/Suriyasps/Strategic-Insights-through-Advanced-Data-Analysis" target="_blank" rel="noopener noreferrer">Advanced Analytics for Business Strategy <i class="fas fa-arrow-up-right-from-square"></i></a></h3>
+            <p>Developed Lasso Regression and Generalised Additive Models to explore key business performance drivers, using PCA and KNN for imputation and SVM for predictive insights.</p>
+          </div>
+          <div class="project-card" onclick="activateCard(this)">
+            <h3><a href="https://github.com/Suriyasps/Data-Driven-Decision-Making" target="_blank" rel="noopener noreferrer">Optimisation for Supply Chains <i class="fas fa-arrow-up-right-from-square"></i></a></h3>
+            <p>Formulated mathematical models in R to optimise production across multiple plants, applying constraint-based logic and capacity planning to improve product allocation efficiency.</p>
+          </div>
+          <div class="project-card" onclick="activateCard(this)">
+            <h3><a href="https://github.com/Suriyasps/Navigating-the-Nexus-Predictive-Power-in-the-Insurance-Industry" target="_blank" rel="noopener noreferrer">Predictive Power in Insurance <i class="fas fa-arrow-up-right-from-square"></i></a></h3>
+            <p>Applied Random Forest, Support Vector Machines and Artificial Neural Networks to predict life insurance sales using demographic and behavioural data.</p>
+          </div>
+          <div class="project-card" onclick="activateCard(this)">
+            <h3><a href="https://github.com/Suriyasps/Decoding-Customer-Dynamics-Strategic-Segmentation-for-E-Commerce-Growth" target="_blank" rel="noopener noreferrer">Customer Segmentation <i class="fas fa-arrow-up-right-from-square"></i></a></h3>
+            <p>Segmented over 10,000 e-commerce customers using RFM analysis and clustering techniques to define customer profiles and support targeted marketing strategies.</p>
+          </div>
+          <div class="project-card" onclick="activateCard(this)">
+            <h3><a href="https://github.com/Suriyasps/Market-Dynamics-through-a-Dual-Lens" target="_blank" rel="noopener noreferrer">Market Dynamics <i class="fas fa-arrow-up-right-from-square"></i></a></h3>
+            <p>Used Conjoint Analysis and Principal Component Analysis to measure consumer preferences for circular products and support sustainable product development.</p>
+          </div>
+          <div class="project-card" onclick="activateCard(this)">
+            <h3>Insurance Data Management</h3>
+            <p>Merged fragmented datasets from Access and Excel into a centralised base table, automated joins and quality checks, and generated product-level strategy insights using SQL and R.</p>
+          </div>
+          <div class="project-card" onclick="activateCard(this)">
+            <h3>Insurance Policy Integration</h3>
+            <p>Unified motor, health and travel insurance policy data using SQL and R, cleaning and analysing more than 4,000 records to identify sales trends and inform targeted marketing.</p>
+          </div>
         </div>
-        <div class="project-card" onclick="activateCard(this)">
-          <h3>Insurance Policy Integration and Sales Insights</h3>
-          <p>Unified motor, health, and travel insurance policy data using SQL and R. Cleaned and analysed over 4,000 records to identify sales trends and inform targeted marketing strategies.</p>
-        </div>
-      </div> 
+      </div>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+<section id="education">
+    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+
+    <div class="education-item">
+        <h3>PGCert in Operations and Supply Chain Management (Distinction)</h3>
+        <p><strong>Queen's University Belfast</strong></p>
+        <span>September 2025 – June 2026</span>
     </div>
-    <div class="carousel-dots" id="carouselDots"></div>
-  </section>
-  
-    <section id="education" style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px); border-radius: 50px; padding: 20px;" >
-      <h2>Education</h2>
-      <p><strong>● MSc in Business Analytics</strong>| Queen’s University Belfast |Sep 023-Sep 2024<br>
-          <strong>● MSc in Physics</strong>| Presidency College |Sep 2021-Jun 2023<br>
-          <strong>● BSc in Physics</strong>| SRM Institue Of Science and Technology | Jun 2017 - Jun 2020</p>
-    </section>
-   <section id="certifications"  style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px); border-radius: 50px; padding: 20px;" >
-      <h2>Certifications</h2>
-      <p>● AWS Cloud Foundations<br>
-        ● AWS Machine Learning Foundations<br>
-        ● Getting Started with Microsoft Azure<br>
-   </p>
-    </section>
-   <section id="experience" class="active" style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px); border-radius: 50px; padding: 20px;">
-    <h2>Experience</h2>
 
-    <p>
-        <strong>Digital Transformation Engineer | Queen's University Belfast (KTP) | Belfast, United Kingdom</strong><br>
-        ● Lead the delivery of an Innovate UK Knowledge Transfer Partnership (KTP), developing and implementing a digital transformation roadmap that accelerates AI adoption, automation and data-driven decision-making within a UK aerospace manufacturer.<br>
-        ● Design and deploy AI-enabled automation, predictive analytics and production planning solutions that have eliminated over <strong>35 hours of manual administrative work each week</strong>, improving customer response times and operational efficiency.<br>
-        ● Identify, evaluate and prioritise emerging technologies including Artificial Intelligence (AI), advanced analytics and Industry 4.0, translating research into commercially deployable solutions aligned with business strategy.<br>
-        ● Build strong partnerships across industry, academia and technology providers, collaborating with senior leadership, researchers and operational teams to deliver strategic innovation initiatives.<br>
-        ● Represent the partnership at technical presentations, innovation events and industry engagements, promoting collaboration and best practice in digital manufacturing.<br>
+    <div class="education-item">
+        <h3>MSc in Business Analytics (Distinction)</h3>
+        <p><strong>Queen's University Belfast</strong></p>
+        <span>September 2023 – September 2024</span>
+    </div>
 
-        <br>
+    <div class="education-item">
+        <h3>MSc in Physics</h3>
+        <p><strong>Presidency College</strong></p>
+        <span>September 2021 – June 2023</span>
+    </div>
 
-        <strong>Data Analyst | Furniq UK Ltd. | Belfast, United Kingdom</strong><br>
-        ● Led the development of AI-driven reporting and forecasting solutions that improved demand planning, inventory management and strategic decision-making across international business operations.<br>
-        ● Designed and integrated enterprise data solutions by connecting CRM platforms, cloud data warehouses and operational systems, creating a single source of truth for business intelligence and reporting.<br>
-        ● Collaborated with cross-functional stakeholders to identify digital transformation opportunities, translating business requirements into scalable analytics and automation solutions.<br>
-        ● Delivered interactive dashboards and predictive analytics that enhanced operational visibility and contributed to improved supply chain performance and revenue growth.<br>
-        ● Promoted the adoption of data-driven decision-making by delivering user training, technical guidance and analytics solutions across the organisation.<br>
-
-        <br>
-
-        <strong>Business Analyst – Student Mentor | Survitec Group Ltd. | Belfast, United Kingdom</strong><br>
-        ● Supported enterprise digital transformation initiatives through data integration, analytics and process optimisation within a manufacturing environment.<br>
-        ● Designed predictive models and optimisation algorithms to improve resource planning, production scheduling and budget forecasting.<br>
-        ● Developed Power BI dashboards that enabled senior management to monitor key business performance indicators and support strategic decision-making.<br>
-        ● Collaborated with multidisciplinary teams to identify opportunities for process improvement and deliver practical data-driven solutions.<br>
-        ● Mentored interns and colleagues in analytics tools and best practices, strengthening team capability and encouraging data-driven decision-making.<br>
-
-        <br>
-
-        <strong>Research Assistant | SRM Institute of Science and Technology | Chennai, India</strong><br>
-        ● Conducted multidisciplinary research combining computational modelling, statistical analysis and experimental techniques to investigate advanced thermoelectric materials.<br>
-        ● Developed automated data acquisition and analysis workflows that improved research efficiency, data quality and experimental reproducibility.<br>
-        ● Applied predictive modelling techniques to optimise experimental conditions and support evidence-based research decisions.<br>
-        ● Collaborated with academic researchers across multiple disciplines, contributing to research publications and knowledge dissemination.<br>
-        ● Presented technical findings to academic audiences while translating complex scientific concepts into practical research outcomes.<br>
-    </p>
-
+    <div class="education-item">
+        <h3>BSc in Physics</h3>
+        <p><strong>SRM Institute of Science and Technology</strong></p>
+        <span>June 2017 – June 2020</span>
+    </div>
 </section>
 
-   <section id="contact"  style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px); border-radius: 50px; padding: 20px;" >
-    <h2>Contact</h2>
-    <div class="social-icons" style="flex-direction: row; justify-content: start; align-items: center; gap: 80px;">
-        <a href="mailto:ssubbiahperumal@gmail.com;" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail">ssubbiahperumal@gmail.com
-        </a>
-        <a href="https://www.linkedin.com/in/suriya-subbiah-perumal/" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">Suriya Subbiah Perumal
-        </a>
-      </div> <br>
-     <form class="contact-form" action="https://formspree.io/f/mvgkljlq" method="POST">
-      <label>Name:
-        <input type="Name" name="Name" required>
-      </label>
-      <label>Your email:
-        <input type="email" name="email" required>
-      </label>
-      <label>Your message:
-        <textarea name="message" required></textarea>
-      </label>
-      <input type="hidden" name="_subject" value="New message from portfolio site!">
-      <button type="submit">Send</button>
-    </form>
-</section>
+    <section id="certifications">
+      <h2><i class="fa-solid fa-certificate"></i> Certifications</h2>
+      <div class="cert-grid">
+        <div class="cert">AWS Cloud Foundations</div>
+        <div class="cert">AWS Machine Learning Foundations</div>
+        <div class="cert">Getting Started with Microsoft Azure</div>
+      </div>
+    </section>
 
+    <section id="contact">
+      <h2><i class="fa-solid fa-envelope"></i> Contact</h2>
+      <div class="contact-row">
+        <a class="contact-link" href="mailto:ssubbiahperumal@gmail.com"><i class="fa-solid fa-envelope"></i>ssubbiahperumal@gmail.com</a>
+        <a class="contact-link" href="https://www.linkedin.com/in/suriya-subbiah-perumal/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+      </div>
 
-<script>
-    let activeSection = null;
-    function toggleSection(id) {
-      const section = document.getElementById(id);
-      if (activeSection && activeSection !== section) {
-        activeSection.classList.remove('active');
-      }
-      if (section.classList.contains('active')) {
-        section.classList.remove('active');
-        activeSection = null;
-      } else {
-        section.classList.add('active');
-        activeSection = section;
-      }
+      <form class="contact-form" action="https://formspree.io/f/mvgkljlq" method="POST">
+        <label>Name
+          <input type="text" name="Name" required>
+        </label>
+        <label>Your email
+          <input type="email" name="email" required>
+        </label>
+        <label>Your message
+          <textarea name="message" required></textarea>
+        </label>
+        <input type="hidden" name="_subject" value="New message from portfolio site!">
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Suriya Subbiah Perumal. AI, Digital Transformation & Innovation.
+  </footer>
+
+  <script>
+    function activateCard(card) {
+      const allCards = document.querySelectorAll('.project-card');
+      const carousel = document.querySelector('.carousel');
+      allCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      const cardWidth = card.offsetWidth + 18;
+      const index = Array.from(allCards).indexOf(card);
+      const center = (carousel.parentElement.offsetWidth / 2) - (cardWidth / 2);
+      const scroll = index * cardWidth - center;
+      carousel.parentElement.scrollTo({ left: scroll, behavior: 'smooth' });
+      updateDots(index);
     }
 
-    function activateCard(card) {
-  const allCards = document.querySelectorAll('.project-card');
-  const carousel = document.querySelector('.carousel');
-  allCards.forEach(c => c.classList.remove('active'));
-  card.classList.add('active');
-  const cardWidth = card.offsetWidth + 20;
-  const index = Array.from(allCards).indexOf(card);
-  const center = (carousel.offsetWidth / 2) - (cardWidth / 2);
-  const scroll = index * cardWidth - center;
-  carousel.scrollTo({ left: scroll, behavior: 'smooth' });
-  updateDots(index);
-}
+    function updateDots(activeIndex) {
+      const dots = document.querySelectorAll('#carouselDots button');
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === activeIndex);
+      });
+    }
 
-  function updateDots(activeIndex) {
-  const dots = document.querySelectorAll('#carouselDots button');
-  dots.forEach((dot, idx) => {
-    dot.classList.toggle('active', idx === activeIndex);
-  });
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-  const carousel = document.querySelector('.carousel');
-  const cards = document.querySelectorAll('.project-card');
-  const dotContainer = document.getElementById('carouselDots');
-  cards.forEach((_, idx) => {
-    const dot = document.createElement('button');
-    if (idx === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => activateCard(cards[idx]));
-    dotContainer.appendChild(dot);
-  });
-});
-</script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.project-card');
+      const dotContainer = document.getElementById('carouselDots');
+      cards.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        if (idx === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => activateCard(cards[idx]));
+        dotContainer.appendChild(dot);
+      });
+    });
+  </script>
 </body>
 </html>
